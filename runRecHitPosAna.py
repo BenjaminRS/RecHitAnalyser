@@ -15,7 +15,7 @@ process.GlobalTag.globaltag = "133X_dataRun3_Prompt_v2"
 
 # Load the input file containing RECO data
 process.source = cms.Source("PoolSource",
-    fileNames = cms.untracked.vstring('file:RECO_3.root')
+    fileNames = cms.untracked.vstring('file:/afs/cern.ch/user/b/benjamin/public/Reco/RECO_3.root')
 )
 
 # Set the maximum number of events to process
