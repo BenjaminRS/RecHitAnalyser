@@ -18,3 +18,6 @@ Running:
 ```
 time cmsRun runRecHitPosAna.py
 ```
+
+Example from the root TH2D:
+![TH2D of the xy global position of RecHits](http://benjamin.web.cern.ch/benjamin/Docs/GlobalRecHitXY.png)
