@@ -34,6 +34,7 @@ private:
   edm::EDGetTokenT<TrackingRecHitCollection> recHitCollectionToken_;
   edm::ESGetToken<TrackerGeometry, TrackerDigiGeometryRecord> theGToken_;
   TH2D *recHitsXY;
+  TH2D *recHitsRZ;
 };
 
 RecHitPositionAnalyzer::RecHitPositionAnalyzer(const edm::ParameterSet& iConfig){
@@ -42,6 +43,7 @@ RecHitPositionAnalyzer::RecHitPositionAnalyzer(const edm::ParameterSet& iConfig)
   recHitCollectionToken_ = consumes<TrackingRecHitCollection>(iConfig.getParameter<edm::InputTag>("recHitCollection"));
   theGToken_ = esConsumes();
   recHitsXY = fs->make<TH2D>("recHitsXY", "X vs Y Position of the RecHits", 3000, -150.0, 150.0, 3000, -150.0, 150.0);
+  recHitsRZ = fs->make<TH2D>("recHitsRZ", "R vs Z Position of the RecHits", 5600, -280.0, 280.0, 1600, 0.0, 160.0);
 }
 
 RecHitPositionAnalyzer::~RecHitPositionAnalyzer(){
@@ -62,6 +64,8 @@ void RecHitPositionAnalyzer::analyze(const edm::Event& iEvent, const edm::EventS
     if(recHit.isValid()){
       const auto& gPosition = theG->idToDet((recHit).geographicalId())->surface().toGlobal((recHit).localPosition());
       recHitsXY->Fill(gPosition.x(),gPosition.y());
+      recHitsRZ->Fill(gPosition.z(),gPosition.perp());
+      // std::cout << "\t\t\tRecHit in GP x y z: " << gPosition.x() << " " << gPosition.y() << " " << gPosition.z() << std::endl;
     }
   }
 
