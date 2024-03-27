@@ -21,8 +21,8 @@ time cmsRun runRecHitPosAna.py
 ```
 
 Example from the root TH2D:
-![TH2D of the xy global position of RecHits](http://benjamin.web.cern.ch/benjamin/Docs/GlobalRecHitXY.png)
-![TH2D of the rz global position of RecHits](http://benjamin.web.cern.ch/benjamin/Docs/GlobalRecHitRZ.png)
+![TH2D of the xy Global Position of RecHits](http://benjamin.web.cern.ch/benjamin/Docs/GlobalRecHitXY.png)
+![TH2D of the rz Global Position of RecHits](http://benjamin.web.cern.ch/benjamin/Docs/GlobalRecHitRZ.png)
 
 
 The analyser is running over data CMS collected (Run 370293) and then reconstructed with the following command:
