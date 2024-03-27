@@ -21,7 +21,7 @@ time cmsRun runRecHitPosAna.py
 ```
 
 Example from the root TH2D:
-![TH2D of the xy Global Position of RecHits](http://benjamin.web.cern.ch/benjamin/Docs/GlobalRecHitXY.png)
+![TH2D of the xy Global Position of RecHits](http://benjamin.web.cern.ch/benjamin/Docs/GlobalRecHitXYNew.png)
 ![TH2D of the rz Global Position of RecHits](http://benjamin.web.cern.ch/benjamin/Docs/GlobalRecHitRZ.png)
 
 
